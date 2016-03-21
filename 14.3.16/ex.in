@@ -1,0 +1,306 @@
+import sys
+sys.stdin = open('ex.in', 'r')
+sys.stdout = open('ex.out', 'w')
+a, b = map(int, input().split())
+d = int(input())
+
+print(a+b, b)
+print(a)
+print(d)
+#http://pythontutor.ru/
+# ñïðàâêà ïî  ÿçûêó
+print(5 + 10)
+print(3 * 7, (17 - 2) * 8)
+print(2 ** 16)  # äâå çâ¸çäî÷êè îçíà÷àþò âîçâåäåíèå â ñòåïåíü
+print(37 / 3)  # îäèí ñëýø — ýòî äåëåíèå ñ îòâåòîì-äðîáüþ
+print(37 // 3)  # äâà ñëýøà ñ÷èòàþò ÷àñòíîå îò äåëåíèÿ íàöåëî
+                # ýòî êàê îïåðàöèÿ div â äðóãèõ ÿçûêàõ
+print(37 % 3)  # ïðîöåíò ñ÷èòàåò îñòàòîê îò äåëåíèÿ íàöåëî
+               # ýòî êàê îïåðàöèÿ mod â äðóãèõ ÿçûêàõ
+print('Êàê âàñ çîâóò?')
+name = input()  # ñ÷èòûâàåì ñòðîêó è êëàä¸ì å¸ â ïåðåìåííóþ name
+print('Çäðàâñòâóéòå, ' + name + '!')
+
+first = 5
+second = 7
+print(first * second)
+first = '5'
+second = '7'
+print(first * second)
+
+a = int(input())
+b = int(input())
+s = a + b
+print(s)
+
+# óñëîâèÿ ïî ÿçûêó
+x = int(input())
+if x > 0:
+    print(x)
+else:
+    print(-x)
+
+#if Óñëîâèå:
+#    Áëîê èíñòðóêöèé 1
+#else:
+#    Áëîê èíñòðóêöèé 2
+
+x = int(input())
+if x < 0:
+    x = -x
+print(x)
+
+print(17 / 3)   # âûâåäåò 5.66666666667
+print(17 // 3)  # âûâåäåò 5
+print(17 % 3)   # âûâåäåò 2
+
+x = float(input())
+print(x)
+"""
+Íåêîòîðûå èç ïåðå÷èñëåííûõ ôóíêöèé (int, round, abs) ÿâëÿþòñÿ ñòàíäàðòíûìè è íå òðåáóþò ïîäêëþ÷åíèÿ ìîäóëÿ math äëÿ èñïîëüçîâàíèÿ.
+Ôóíêöèÿ 	Îïèñàíèå
+Îêðóãëåíèå
+int(x) 	Îêðóãëÿåò ÷èñëî â ñòîðîíó íóëÿ. Ýòî ñòàíäàðòíàÿ ôóíêöèÿ, äëÿ åå èñïîëüçîâàíèÿ íå íóæíî ïîäêëþ÷àòü ìîäóëü math.
+round(x) 	Îêðóãëÿåò ÷èñëî äî áëèæàéøåãî öåëîãî. Åñëè äðîáíàÿ ÷àñòü ÷èñëà ðàâíà 0.5, òî ÷èñëî îêðóãëÿåòñÿ äî áëèæàéøåãî ÷åòíîãî ÷èñëà.
+round(x, n) 	Îêðóãëÿåò ÷èñëî x äî n çíàêîâ ïîñëå òî÷êè. Ýòî ñòàíäàðòíàÿ ôóíêöèÿ, äëÿ åå èñïîëüçîâàíèÿ íå íóæíî ïîäêëþ÷àòü ìîäóëü math.
+floor(x) 	Îêðóãëÿåò ÷èñëî âíèç («ïîë»), ïðè ýòîì floor(1.5) == 1, floor(-1.5) == -2
+ceil(x) 	Îêðóãëÿåò ÷èñëî ââåðõ («ïîòîëîê»), ïðè ýòîì ceil(1.5) == 2, ceil(-1.5) == -1
+abs(x) 	Ìîäóëü (àáñîëþòíàÿ âåëè÷èíà). Ýòî — ñòàíäàðòíàÿ ôóíêöèÿ.
+Êîðíè, ëîãàðèôìû
+sqrt(x) 	Êâàäðàòíûé êîðåíü. Èñïîëüçîâàíèå: sqrt(x)
+log(x) 	Íàòóðàëüíûé ëîãàðèôì. Ïðè âûçîâå â âèäå log(x, b) âîçâðàùàåò ëîãàðèôì ïî îñíîâàíèþ b.
+e 	Îñíîâàíèå íàòóðàëüíûõ ëîãàðèôìîâ e = 2,71828...
+Òðèãîíîìåòðèÿ
+sin(x) 	Ñèíóñ óãëà, çàäàâàåìîãî â ðàäèàíàõ
+cos(x) 	Êîñèíóñ óãëà, çàäàâàåìîãî â ðàäèàíàõ
+tan(x) 	Òàíãåíñ óãëà, çàäàâàåìîãî â ðàäèàíàõ
+asin(x) 	Àðêñèíóñ, âîçâðàùàåò çíà÷åíèå â ðàäèàíàõ
+acos(x) 	Àðêêîñèíóñ, âîçâðàùàåò çíà÷åíèå â ðàäèàíàõ
+atan(x) 	Àðêòàíãåíñ, âîçâðàùàåò çíà÷åíèå â ðàäèàíàõ
+atan2(y, x) 	Ïîëÿðíûé óãîë (â ðàäèàíàõ) òî÷êè ñ êîîðäèíàòàìè (x, y).
+degrees(x) 	Ïðåîáðàçóåò óãîë, çàäàííûé â ðàäèàíàõ, â ãðàäóñû.
+radians(x) 	Ïðåîáðàçóåò óãîë, çàäàííûé â ãðàäóñàõ, â ðàäèàíû.
+pi 	Êîíñòàíòà ? = 3.1415...
+"""
+i = 1
+for color in 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet':
+    print('#', i, ' color of rainbow is ', color, sep = '')
+    i += 1
+
+for i in 1, 2, 3, 'one', 'two', 'three':
+    print(i)
+
+for i in range(4):  # ðàâíîñèëüíî èíñòðóêöèè for i in 0, 1, 2, 3:
+    # çäåñü ìîæíî âûïîëíÿòü öèêëè÷åñêèå äåéñòâèÿ
+    print(i)
+    print(i ** 2)
+# öèêë çàêîí÷èëñÿ, ïîñêîëüêó çàêîí÷èëñÿ áëîê ñ îòñòóïîì
+print('Êîíåö öèêëà')
+
+sum = 0
+n = 5
+for i in range(1, n + 1):
+    sum += i
+print(sum)
+
+s = input()
+print(len(s))
+t = input()
+number = int(t)
+u = str(number)
+print(s * 3)
+print(s + ' ' + u)
+# ñòðîêè
+s = 'abcdefg'
+print(s[1])
+print(s[-1])
+print(s[1:3])
+print(s[1:-1])
+print(s[:3])
+print(s[2:])
+print(s[:-1])
+print(s[::2])
+print(s[1::2])
+print(s[::-1])
+
+#ïîèñê ñ îäíîé
+S = 'Hello'
+print(S.find('e'))
+# âåðí¸ò 1
+print(S.find('ll'))
+# âåðí¸ò 2
+print(S.find('L'))
+# âåðí¸ò -1
+
+# è ñ äðóãîé
+S = 'Hello'
+print(S.find('l'))
+# âåðí¸ò 2
+print(S.rfind('l'))
+# âåðí¸ò 3
+
+print('Hello'.replace('l', 'L'))
+# âåðí¸ò 'HeLLo'
+
+print('Abrakadabra'.replace('a', 'A', 2))
+# âåðí¸ò 'AbrAkAdabra'
+
+print('Abracadabra'.count('a'))
+# âåðí¸ò 4
+print(('a' * 10).count('aa'))
+# âåðí¸ò 5
+"""
+while óñëîâèå:
+    áëîê èíñòðóêöèé
+    """
+i = 1
+while i <= 10:
+    print(i ** 2)
+    i += 1
+
+n = int(input())
+length = 0
+while n > 0:
+    n //= 10  # ýòî ýêâèâàëåíòíî n = n // 10
+    length += 1
+print(length)
+
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+else:
+    print('Öèêë îêîí÷åí, i =', i)
+
+a = int(input())
+while a != 0:
+    if a < 0:
+        print('Âñòðåòèëîñü îòðèöàòåëüíîå ÷èñëî', a)
+        break
+    a = int(input())
+else:
+    print('Íè îäíîãî îòðèöàòåëüíîãî ÷èñëà íå âñòðåòèëîñü')
+
+n = int(input())
+for i in range(n):
+    a = int(input())
+    if a < 0:
+        print('Âñòðåòèëîñü îòðèöàòåëüíîå ÷èñëî', a)
+        break
+else:
+    print('Íè îäíîãî îòðèöàòåëüíîãî ÷èñëà íå âñòðåòèëîñü')
+
+a = []  # çàâîäèì ïóñòîé ñïèñîê
+n = int(input())  # ñ÷èòûâàåì êîëè÷åñòâî ýëåìåíò â ñïèñêå
+for i in range(n):
+    new_element = int(input())  # ñ÷èòûâàåì î÷åðåäíîé ýëåìåíò
+    a.append(new_element)  # äîáàâëÿåì åãî â ñïèñîê
+    # ïîñëåäíèå äâå ñòðîêè ìîæíî áûëî çàìåíèòü îäíîé:
+    # a.append(int(input()))
+print(a)
+
+a = [0] * int(input())
+for i in range(len(a)):
+    a[i] = int(input())
+
+# äàíî: s = 'ab12c59p7dq'
+# íàäî: èçâëå÷ü öèôðû â ñïèñîê digits,
+# ÷òîáû ñòàëî òàê:
+# digits == [1, 2, 5, 9, 7]
+
+s = 'ab12c59p7dq'
+digits = []
+for symbol in s:
+    if '1234567890'.find(symbol) != -1:
+        digits.append(int(symbol))
+print(digits)
+
+# íà âõîä ïîäà¸òñÿ ñòðîêà
+# 1 2 3
+s = input()  # s == '1 2 3'
+a = s.split()  # a == ['1', '2', '3']
+
+a = [int(s) for s in input().split()]
+
+a = ['red', 'green', 'blue']
+print(' '.join(a))
+# âåðí¸ò red green blue
+print(''.join(a))
+# âåðí¸ò redgreenblue
+print('***'.join(a))
+# âåðí¸ò red***green***blue
+
+#[âûðàæåíèå for ïåðåìåííàÿ in ïîñëåäîâàòåëüíîñòü]
+
+from random import randrange
+n = 10
+a = [randrange(1, 10) for i in range(n)]
+
+a = [[1, 2, 3, 4], [5, 6], [7, 8, 9]]
+for row in a:
+    for elem in row:
+        print(elem, end=' ')
+    print()
+
+A = {1, 2, 3}
+A = set('qwerty')
+print(A)
+# âûâåäåò {'e', 'q', 'r', 't', 'w', 'y'}.
+
+primes = {2, 3, 5, 7, 11}
+for num in primes:
+    print(num)
+
+A = {1, 2, 3}
+print(1 in A, 4 not in A)
+A.add(4)
+
+"""
+ A | B
+A.union(B)
+
+Âîçâðàùàåò ìíîæåñòâî, ÿâëÿþùååñÿ îáúåäèíåíèåì ìíîæåñòâ A è B.
+A |= B
+A.update(B)
+
+Äîáàâëÿåò â ìíîæåñòâî A âñå ýëåìåíòû èç ìíîæåñòâà B.
+A & B
+A.intersection(B)
+
+Âîçâðàùàåò ìíîæåñòâî, ÿâëÿþùååñÿ ïåðåñå÷åíèåì ìíîæåñòâ A è B.
+A &= B
+A.intersection_update(B)
+
+Îñòàâëÿåò â ìíîæåñòâå A òîëüêî òå ýëåìåíòû, êîòîðûå åñòü â ìíîæåñòâå B.
+A - B
+A.difference(B)
+
+Âîçâðàùàåò ðàçíîñòü ìíîæåñòâ A è B (ýëåìåíòû, âõîäÿùèå â A, íî íå âõîäÿùèå â B).
+A -= B
+A.difference_update(B)
+
+Óäàëÿåò èç ìíîæåñòâà A âñå ýëåìåíòû, âõîäÿùèå â B.
+A ^ B
+A.symmetric_difference(B)
+
+Âîçâðàùàåò ñèììåòðè÷åñêóþ ðàçíîñòü ìíîæåñòâ A è B (ýëåìåíòû, âõîäÿùèå â A èëè â B, íî íå â îáà èç íèõ îäíîâðåìåííî).
+A ^= B
+A.symmetric_difference_update(B)
+
+Çàïèñûâàåò â A ñèììåòðè÷åñêóþ ðàçíîñòü ìíîæåñòâ A è B.
+A <= B
+A.issubset(B)
+
+Âîçâðàùàåò true, åñëè A ÿâëÿåòñÿ ïîäìíîæåñòâîì B.
+A >= B
+A.issuperset(B)
+
+Âîçâðàùàåò true, åñëè B ÿâëÿåòñÿ ïîäìíîæåñòâîì A.
+A < B
+
+Ýêâèâàëåíòíî A <= B and A != B
+A > B
+
+Ýêâèâàëåíòíî A >= B and A != B
+
+"""
